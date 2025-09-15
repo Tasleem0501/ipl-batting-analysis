@@ -2,6 +2,8 @@ import pandas as pd
 import seaborn as sns
 from math import pi
 import plotly.io as pio
+import os
+
 pio.renderers.default = "browser"
 
 
@@ -158,6 +160,9 @@ fig.update_layout(
     xaxis_tickangle=-45,
     margin=dict(l=40, r=40, t=80, b=100)
 )
+os.makedirs("results", exist_ok=True)  # Create folder if it doesn't exist
+fig.write_image("results/boundarywise_analysis.png")  # Save as PNG
+fig.write_html("results/boundarywise_analysis.html")  # Save interactive HTML
 
 fig.show()
 wickets_df = df_copy[df_copy['player_out'].notna()]
@@ -199,6 +204,11 @@ fig.update_layout(
     margin=dict(l=40, r=40, t=80, b=60),
     hovermode='x unified'
 )
+
+# ---------------- Save the plot in results/ folder ----------------
+os.makedirs("results", exist_ok=True)  # Create folder if it doesn't exist
+fig.write_image("results/overwise_analysis.png")  # Save as PNG
+fig.write_html("results/overwise_analysis.html")  # Save interactive HTML
 
 fig.show()
 batter_stats = (
@@ -273,4 +283,9 @@ fig.update_layout(
     margin=dict(l=40, r=40, t=100, b=50)
 )
 
+# ---------------- Save the plot in results/ folder ----------------
+os.makedirs("results", exist_ok=True)  # Create folder if it doesn't exist
+fig.write_image("results/batterwise_analysis.png")  # Save as PNG
+fig.write_html("results/batterwise_analysis.html")  # Save interactive HTML
 fig.show()
+
