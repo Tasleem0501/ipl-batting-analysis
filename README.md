@@ -11,3 +11,14 @@ and provides insights into batter profiles, strike rates, and match impact.
    ```bash
    git clone https://github.com/Tasleem0501/ipl-batting-analysis.git
    cd ipl-batting-analysis
+
+
+## 📊 Results
+
+Over-wise Analysis: Runs vs Wickets
+
+![Over-wise Analysis](results/overwise_analysis.png)
+
+ chart :
+
+![batterwise Analysis](results/batterwise_analysis.png)
